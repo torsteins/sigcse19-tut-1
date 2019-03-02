@@ -1,1 +1,15 @@
 lab50: true
+
+check50:
+  hello world:
+    - run: clang hello.c -o hello -lcs50
+      exit: 0
+    - run: ./hello
+      stdout: Hello, world!
+      exit: 0
+      
+  files:
+    - !exclude "*"
+    - !include "*.c"
+    - !require "hello.c"
+    
